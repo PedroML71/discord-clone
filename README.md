@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Este é um projeto incrível construído com Next.js.
+Ele foi construído usando Mysql como banco de dados,
+Clerk como solução de autenticação,
+Uploadthing como host de imagens,
+Prisma como solução ORM e
+Livekit como solução de web-sharing.
+Para executá-lo em sua máquina local, siga estas etapas:
 
-## Getting Started
+**Clone o repositório:**
+git clone https://github.com/PedroML71/discord-clone.git
 
-First, run the development server:
+**Instale as dependências:**
+npm install
 
-```bash
+**Crie um arquivo `.env` na raiz do projeto:**
+
+**Adicione as seguintes variáveis de ambiente ao arquivo `.env`:**
+DATABASE_URL=seu-url-do-banco-de-dados
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=chave-publica-do-clerk
+CLERK_SECRET_KEY=chave-secreta-do-clerk
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=link-login-do-app (no caso deste app você deve usar o /sign-in)
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=link-cadastro-do-app (no caso deste app você deve usar o /sign-up)
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=link-redirect-após-login (no caso deste app você deve usar o /)
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=link-redirect-após-cadastro (no caso deste app você deve usar o /)
+UPLOADTHING_SECRET=senha-secreta-do-uploadthing
+UPLOADTHING_APP_ID=id-do-projeto-seu-projeto-uploadthing
+LIVEKIT_API_KEY=id-do-projeto-livekit
+LIVEKIT_API_SECRET=senha-secreta-do-projeto-livekit
+NEXT_PUBLIC_LIVEKIT_URL=url-wss-póblica-do-projeto-livekit
+
+**Inicie o prisma:**
+npx prisma db push
+
+**Inicie o servidor de desenvolvimento:**
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
